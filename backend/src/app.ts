@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import path from 'path';
+import { errors } from 'celebrate';
 import { PORT, DB_ADDRESS } from './config';
 import productRouter from './routes/product.routes';
 import orderRouter from './routes/order.routes';
@@ -25,6 +26,7 @@ app.use('/order', orderRouter);
 
 app.use(errorLogger);
 app.use(notFoundHandler);
+app.use(errors());
 app.use(errorHandler);
 
 app.listen(PORT, () => {

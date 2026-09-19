@@ -7,7 +7,7 @@ const validateProductBody = celebrate({
     image: Joi.object().keys({
       fileName: Joi.string().required(),
       originalName: Joi.string().required(),
-    }),
+    }).required(),
     category: Joi.string().required(),
     price: Joi.number().allow(null),
   }),

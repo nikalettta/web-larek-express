@@ -19,16 +19,16 @@ const productSchema = new mongoose.Schema<IProduct>({
   image: {
     fileName: {
       type: String,
-      require: true,
+      required: true,
     },
     originalName: {
       type: String,
-      require: true,
+      required: true,
     },
   },
   category: {
     type: String,
-    require: true,
+    required: true,
   },
   description: {
     type: String,
